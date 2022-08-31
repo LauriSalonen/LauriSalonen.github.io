@@ -7,13 +7,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linfe</title>
+    <title>Lauri Salonen</title>
+    <style>
+      @import url('http://fonts.cdnfonts.com/css/insaniburger');
+      </style>
     <link rel="stylesheet" href="style2.css">
 
 </head>
 <body>
-  <canvas id="c"></canvas>
-    <script src="js/script.js"></script>
+  
+
   </body>
 <body>
   <div class="banner">
@@ -24,7 +27,7 @@
           <li><a href="kotisivu.html">Kotisivu</a></li>
           <li><a href="aboutus.html">Tietoa Minusta</a></li>
           <li><a href="tuotteet.html">Portfolio</a></li>
-          <li><a href="kartta.html">Kartta</a></li>
+          <li><a href="kartta.html">Laskin</a></li>
       </ul>
       <div>
         <button type="button" onclick="window.location.href='yhteys.html'"><span></span>Yhteystiedot</button>
@@ -32,7 +35,49 @@
         
     </div>
 
+    <h1> Tervetuloa Laskimeen! </h1>
+    <h2>Keskimmäiseen Laatikkoon Menee Merkki (+ , - , * , /)</h2>
+  
+<script>
 
+
+function laskin(form) {
+var LUKEMA = "Valitettavasti Kaikki Ei Mennyt Putkeen";
+var NUM1 = document.getElementById("num1").value;
+var MERKKI = document.getElementById("merkki").value;
+var NUM2 = document.getElementById("num2").value;
+
+if (MERKKI === "+")
+{
+LUKEMA = parseInt(NUM1)+parseInt(NUM2); 
+}
+else if(MERKKI === "-")
+{
+LUKEMA = parseInt(NUM1)-parseInt(NUM2);
+}
+else if(MERKKI === "*")
+{
+LUKEMA = parseInt(NUM1)*parseInt(NUM2);
+}
+else if (MERKKI === "/")
+{
+LUKEMA = parseInt(NUM1)/parseInt(NUM2);
+}
+document.getElementById("lukema").innerHTML = LUKEMA;
+return false;
+}
+</script>
+<body>
+
+<input type="text" id="num1" name="num1" />
+<input type="text" id="merkki" name="merkki" />
+<input type="text" id="num2" name="num2" />
+<br />
+<input type="button" value="Laske" onClick="laskin(this)">
+
+<p id="lukema" name="r1">
+<br />
+</p>
  
 
 </body>
