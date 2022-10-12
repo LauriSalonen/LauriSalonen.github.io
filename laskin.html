@@ -15,8 +15,8 @@
 
 </head>
 <body>
-  <canvas id="c"></canvas>
-    <script src="js/script.js"></script>
+  
+
   </body>
 <body>
   <div class="banner">
@@ -35,14 +35,50 @@
         
     </div>
 
+    <h1> Tervetuloa Laskimeen! </h1>
+    <h2>Keskimmäiseen Laatikkoon Menee Merkki (+ , - , * , /)</h2>
+  
+<script>
 
-    <h1>Lauri Salosen somet:</h1>
-    <p>Gmail: SalonenaLauri@gmail.com </p>
-    <p>Instagram: Lauri__salonen</p>
-    <p>Snapchat: Salonen.Lauri</p>
-    <p>Discord: [FIN] Linfe#3799</p>
+
+function laskin(form) {
+var LUKEMA = "Valitettavasti Kaikki Ei Mennyt Putkeen";
+var NUM1 = document.getElementById("num1").value;
+var MERKKI = document.getElementById("merkki").value;
+var NUM2 = document.getElementById("num2").value;
+
+if (MERKKI === "+")
+{
+LUKEMA = parseInt(NUM1)+parseInt(NUM2); 
+}
+else if(MERKKI === "-")
+{
+LUKEMA = parseInt(NUM1)-parseInt(NUM2);
+}
+else if(MERKKI === "*")
+{
+LUKEMA = parseInt(NUM1)*parseInt(NUM2);
+}
+else if (MERKKI === "/")
+{
+LUKEMA = parseInt(NUM1)/parseInt(NUM2);
+}
+document.getElementById("lukema").innerHTML = LUKEMA;
+return false;
+}
+</script>
+<body>
+
+<input type="text" id="num1" name="num1" />
+<input type="text" id="merkki" name="merkki" />
+<input type="text" id="num2" name="num2" />
+<br />
+<input type="button" value="Laske" onClick="laskin(this)">
+
+<p id="lukema" name="r1">
+<br />
+</p>
  
-    
 
 </body>
 </html>
